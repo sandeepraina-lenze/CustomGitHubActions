@@ -3,7 +3,7 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to get state
     steps:
       # To use this repository's private action,
       # you must check out the repository
@@ -11,9 +11,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Hello world action step
         uses: ./ # Uses an action in the root directory
-        id: hello
-        with:
-          who-to-greet: 'Mona the Octocat'
-      # Use the output from the `hello` step
+        id: state
+      # Use the output from the `state` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+      # Use the output from the `state` step
+      - name: Get the current state
+        run: echo "The current state was ${{ steps.hello.current_state }}"  
