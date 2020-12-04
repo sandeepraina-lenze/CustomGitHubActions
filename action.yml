@@ -1,13 +1,19 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  state1:  # id of input
+    description: 'First state'
     required: true
-    default: 'World'
+    default: 'running'
+  state2:  # id of input
+    description: 'Second state'
+    required: true
+    default: 'walking'  
 outputs:
   time: # id of output
     description: 'The time we greeted you'
+  current_state: # id of output
+    description: 'Current state'  
 runs:
   using: 'node12'
   main: 'index.js'
