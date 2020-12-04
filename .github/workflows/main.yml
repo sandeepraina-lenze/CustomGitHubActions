@@ -17,4 +17,4 @@ jobs:
         run: echo "The time was ${{ steps.hello.outputs.time }}"
       # Use the output from the `state` step
       - name: Get the current state
-        run: echo "The current state was ${{ steps.hello.current_state }}"  
+        run: echo "The current state was ${{ steps.hello.outputs.current_state }}"  
