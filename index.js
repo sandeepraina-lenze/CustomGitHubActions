@@ -9,6 +9,9 @@ try {
   console.log(`State1 Status ${state1}!`);
   console.log(`State2 Status ${state2}!`);
   
+  const time = (new Date()).toTimeString();
+  core.setOutput("time", time);
+  
   if (state1 == 'sleeping') {
 	  console.log(`Output ${state1}!`);
 	  core.setOutput("current_state", state1);
@@ -18,8 +21,7 @@ try {
 	  core.setOutput("current_state", state2)
   }
   
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
+  
   
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
