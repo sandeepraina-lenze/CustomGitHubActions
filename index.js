@@ -9,7 +9,7 @@ try {
   console.log(`State1 Status ${state1}!`);
   console.log(`State2 Status ${state2}!`);
   
-  if (state1 == 'sleeping')) {
+  if (state1 == 'sleeping') {
 	  console.log(`Output ${state1}!`);
 	  core.setOutput("current_state", state1);
   }
