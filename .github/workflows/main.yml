@@ -12,6 +12,8 @@ jobs:
       - name: Hello world action step
         uses: ./ # Uses an action in the root directory
         id: state
+        with:
+          state1: sleeping
       # Use the output from the `state` step
       - name: Get the output time
         run: echo "The time was ${{ steps.state.outputs.time }}"
