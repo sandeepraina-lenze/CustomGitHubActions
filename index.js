@@ -9,10 +9,14 @@ try {
   console.log(`State1 Status ${state1}!`);
   console.log(`State2 Status ${state2}!`);
   
-  if (state1 == "sleeping")
+  if (state1.localCompare("sleeping")) {
+	  console.log(`Output ${state1}!`);
 	  core.setOutput("current_state", state1);
-  else
+  }
+  else {
+	  console.log(`Output ${state2}!`);
 	  core.setOutput("current_state", state2)
+  }
   
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
